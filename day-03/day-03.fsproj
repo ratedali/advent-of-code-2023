@@ -11,6 +11,8 @@
         <Compile Include="parts\part1.fs" />
         <Compile Include="parts\part2.fs" />
         <Compile Include="Program.fs"/>
+        <Content Include="input\part1.txt" />
+        <Content Include="input\example.txt" />
     </ItemGroup>
 
 </Project>

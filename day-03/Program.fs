@@ -1,16 +1,20 @@
-﻿module day_03
+﻿module day_03.Program
 
 open day_03.parse
 open day_03.parts
 
 let load path1 path2 =
     let data1 = path1 |> System.IO.File.ReadAllLines |> parse
-    let data2 = path2 |> System.IO.File.ReadAllLines |> parse
+
+    let data2 =
+        if path1 = path2 then
+            data1
+        else
+            path2 |> System.IO.File.ReadAllLines |> parse
 
     match data1, data2 with
     | Ok data1, Ok data2 -> Ok(data1, data2)
-    | Error e, _
-    | _, Error e -> Error e
+    | Error e, _ | _, Error e -> Error e
 
 
 let solve (data1, data2) =
@@ -30,5 +34,5 @@ let main args =
         printfn $"Part 2: %A{part2}"
         0
     | Error e ->
-        eprintfn $"Error: %s{e}"
+        eprintfn $"Error: %A{e}"
         1
