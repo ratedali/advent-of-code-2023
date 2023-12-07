@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <RootNamespace>day_03</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="parse.fs" />
+        <Compile Include="parts\part1.fs" />
+        <Compile Include="parts\part2.fs" />
+        <Compile Include="Program.fs"/>
+    </ItemGroup>
+
+</Project>
