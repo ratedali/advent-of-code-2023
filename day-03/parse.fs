@@ -9,9 +9,9 @@ let private (|Digit|Character|) =
 
 type Element =
     | Number of value: int * loc: int * digits: int
+    | NumberDigit of loc: int
     | Symbol of value: char * loc: int
     | Dot of loc: int
-    | Ignored
 
 type Graph = Element[][]
 
@@ -30,9 +30,9 @@ let parseLine (line: string) =
     seq {
         for elem in elems do
             match elem with
-            | Number(_, _, d) as n ->
+            | Number(_, loc, digits) as n ->
                 yield n
-                yield! Seq.replicate (d - 1) Ignored
+                yield! Seq.replicate (digits - 1) (NumberDigit loc) 
             | _ -> yield elem
     }
 
