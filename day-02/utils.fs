@@ -1,5 +1,10 @@
 module day_02.utils
 
+let tee fn sequence = seq { for x in sequence do fn x; yield x }
+let effect fn x =
+    do fn x
+    x
+
 let parseHelper (f: string -> bool * 'a) =
     f >> function
         | true, x -> Some x

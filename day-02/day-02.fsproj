@@ -10,7 +10,8 @@
         <Content Include="input\part1.txt" />
         <Compile Include="utils.fs" />
         <Compile Include="parse.fs" />
-        <Compile Include="part1.fs" />
+        <Compile Include="parts\part1.fs" />
+        <Compile Include="parts\part2.fs" />
         <Compile Include="Program.fs"/>
     </ItemGroup>
 

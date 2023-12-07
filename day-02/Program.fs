@@ -3,17 +3,25 @@
 open System.IO
 open parse
 
+let loadData path = File.ReadAllLines path |> parseGames
+
 let BagTotal = { Red = 12; Green = 13; Blue = 14 }
+
+let solve games =
+    let part1 = parts.part1.solve BagTotal games
+    let part2 = parts.part2.solve BagTotal games
+    part1, part2
 
 [<EntryPoint>]
 let main (args) =
-    args
-    |> Array.head
-    |> File.ReadAllLines
-    |> parseGames
-    |> Result.map (part1.solve BagTotal >> fun n -> printfn $"Part 1 = %d{n}")
-    |> function
-        | Ok _ -> 0
-        | Error e ->
-            printfn $"Error: {e}"
-            1
+    let path = args |> Array.tryHead |> Option.defaultValue "input/part1.txt"
+    let res = path |> loadData |> Result.map solve
+
+    match res with
+    | Ok(p1, p2) ->
+        printfn $"Part 1 answer: %d{p1}"
+        printfn $"Part 2 answer: %d{p2}"
+        0
+    | Error e ->
+        eprintfn $"Error: %A{e}"
+        1
