@@ -1,0 +1,12 @@
+{
+  "author": "Ali Salaheldin Ali Ahmed",
+  "name": "Advent of Code F# Template",
+  "description": "A template for advent of code 2023 solution projects in F#",
+  "identity": "RatedAli.AdventOfCode.FSharp.1.0",
+  "shortName": "aoc-fs",
+  "tags": {
+    "language": "F#",
+    "type": "project"
+  },
+  "sourceName": "day_xx"
+}
