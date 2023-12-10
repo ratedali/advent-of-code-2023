@@ -1,7 +1,6 @@
 module day_04.parts.part1
 
-open day_04
-open parse
+open day_04.parse
 
 let commonNumbers (a: int seq) (b: int seq) = Set.intersect (set a) (set b)
 
