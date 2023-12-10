@@ -29,8 +29,8 @@ let solve (data1, data2) =
 [<EntryPoint>]
 let main args =
     let path1, path2 =
-        match args with
-        | [| path1; path2; _ |] -> path1, path2
+        match args |> Array.truncate 2 with
+        | [| path1; path2 |] -> path1, path2
         | [| path |] -> path, path
         | _ -> "input/part1.txt", "input/part2.txt"
 

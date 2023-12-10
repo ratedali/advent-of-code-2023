@@ -8,6 +8,7 @@
 
     <ItemGroup>
         <Content Include="input/example.txt" />
+        <Content Include="input/part1.txt" />
         <Compile Include="utils.fs" />
         <Compile Include="parse.fs" />
         <Compile Include="parts\part1.fs" />
